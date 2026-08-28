@@ -1,58 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Alrozzi | Legal & Human Rights Professional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Omar Alrozzi — Legal Researcher, Legal Trainer, Public Policy and Transitional Justice professional.">
+  <meta name="theme-color" content="#07111f">
+  <title>Omar Alrozzi — Legal & Human Rights Professional</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#07111f;
+      --ink-2:#0d1b2e;
+      --paper:#f7f6f2;
+      --white:#fff;
+      --gold:#b99250;
+      --gold-2:#d7bd8b;
+      --slate:#64748b;
+      --line:#dfe3e8;
+      --soft:#eef1f4;
+      --max:1220px;
+      --shadow:0 24px 70px rgba(7,17,31,.10);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"DM Sans",Arial,sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .wrap{width:min(calc(100% - 48px),var(--max));margin:auto}
+
+    /* Header */
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:50;
+      border-bottom:1px solid rgba(255,255,255,.09);
+      background:rgba(7,17,31,.84);
+      backdrop-filter:blur(18px);
+    }
+    .nav{
+      height:78px;display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{display:flex;align-items:center;gap:13px;color:#fff;font-weight:700}
+    .logo-box{
+      width:40px;height:40px;border:1px solid rgba(215,189,139,.7);
+      display:grid;place-items:center;border-radius:10px;
+      font-size:12px;letter-spacing:.5px;color:var(--gold-2);
+    }
+    .logo-name{font-size:15px;letter-spacing:.2px}
+    .navlinks{display:flex;align-items:center;gap:30px;color:#c8d2df;font-size:13px;font-weight:600}
+    .navlinks a{transition:.2s}
+    .navlinks a:hover{color:#fff}
+    .nav-cta{
+      border:1px solid rgba(215,189,139,.55);
+      color:#fff;padding:9px 15px;border-radius:8px;
+    }
+    .nav-cta:hover{background:rgba(215,189,139,.12)}
+    .menu{display:none;background:none;border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:8px;padding:7px 10px;cursor:pointer}
+
+    /* Hero */
+    .hero{
+      min-height:920px;background:var(--ink);color:#fff;
+      position:relative;display:flex;align-items:center;overflow:hidden;
+      padding:145px 0 105px;
+    }
+    .hero:before{
+      content:"";position:absolute;width:850px;height:850px;border:1px solid rgba(215,189,139,.11);
+      border-radius:50%;right:-350px;top:-180px;
+    }
+    .hero:after{
+      content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(255,255,255,.06);
+      border-radius:50%;right:-180px;top:120px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:70px;align-items:center;position:relative;z-index:2}
+    .kicker{
+      display:flex;align-items:center;gap:12px;text-transform:uppercase;letter-spacing:2.8px;
+      color:var(--gold-2);font-size:11px;font-weight:700;margin-bottom:25px;
+    }
+    .kicker:before{content:"";width:40px;height:1px;background:var(--gold)}
+    h1{
+      font-family:"Playfair Display",Georgia,serif;font-size:clamp(55px,8vw,104px);
+      font-weight:600;line-height:.93;letter-spacing:-4px;max-width:900px;
+    }
+    .hero-role{
+      margin-top:30px;font-size:20px;line-height:1.5;color:#dbe3ed;max-width:720px;
+    }
+    .hero-role strong{color:#fff;font-weight:600}
+    .hero-desc{margin-top:20px;color:#9eacbd;max-width:670px;font-size:15px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:35px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 20px;
+      border-radius:8px;font-size:13px;font-weight:700;transition:.2s;border:1px solid transparent;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .gold{background:var(--gold);color:var(--ink)}
+    .outline{border-color:rgba(255,255,255,.18);color:#fff}
+    .outline:hover{border-color:rgba(215,189,139,.65);background:rgba(255,255,255,.04)}
+    .seal{
+      width:315px;height:315px;border-radius:50%;margin-left:auto;display:grid;place-items:center;
+      border:1px solid rgba(215,189,139,.45);position:relative;
+      background:radial-gradient(circle,rgba(255,255,255,.045),rgba(255,255,255,0) 65%);
+    }
+    .seal:before,.seal:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.08)}
+    .seal:before{inset:24px}.seal:after{inset:57px}
+    .seal-center{text-align:center;position:relative;z-index:1}
+    .seal-initials{font-family:"Playfair Display",Georgia,serif;font-size:72px;line-height:1;color:var(--gold-2)}
+    .seal-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#9eacbd;margin-top:10px}
+    .hero-meta{
+      display:flex;gap:34px;margin-top:65px;padding-top:25px;border-top:1px solid rgba(255,255,255,.1);
+      color:#93a1b4;font-size:11px;text-transform:uppercase;letter-spacing:1.6px;
+    }
+    .hero-meta strong{display:block;color:#e2e8f0;font-size:12px;letter-spacing:0;text-transform:none;margin-top:5px}
+
+    /* Generic sections */
+    section{padding:115px 0}
+    .eyebrow{color:#8a6936;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2.4px;margin-bottom:12px}
+    .dark .eyebrow{color:var(--gold-2)}
+    h2{
+      font-family:"Playfair Display",Georgia,serif;font-size:clamp(35px,4.7vw,58px);
+      line-height:1.1;font-weight:600;letter-spacing:-1.5px;
+    }
+    .lead{color:var(--slate);max-width:650px;margin-top:18px;font-size:15px}
+    .dark .lead{color:#9eacbd}
+
+    /* Intro */
+    .intro-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:100px}
+    .intro-copy{font-size:18px;line-height:1.9;color:#263449}
+    .intro-copy p+p{margin-top:20px}
+    .signature{
+      margin-top:32px;font-family:"Playfair Display",Georgia,serif;font-size:28px;color:var(--ink)
+    }
+    .signature small{display:block;font-family:"DM Sans",Arial,sans-serif;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--slate);margin-top:3px}
+
+    /* Expertise */
+    .dark{background:var(--ink);color:#fff}
+    .section-top{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:55px}
+    .section-top .lead{margin-top:0}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.13);border-left:1px solid rgba(255,255,255,.13)}
+    .card{
+      min-height:285px;padding:30px;border-right:1px solid rgba(255,255,255,.13);border-bottom:1px solid rgba(255,255,255,.13);
+      transition:.25s;background:rgba(255,255,255,.015)
+    }
+    .card:hover{background:rgba(255,255,255,.045);transform:translateY(-4px)}
+    .num{font-size:11px;color:var(--gold-2);letter-spacing:2px;font-weight:800}
+    .card h3{font-family:"Playfair Display",Georgia,serif;font-size:25px;font-weight:500;margin:58px 0 12px}
+    .card p{color:#98a6b8;font-size:13px}
+
+    /* Experience */
+    .experience-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
+    .timeline{border-top:1px solid var(--line)}
+    .timeline-item{display:grid;grid-template-columns:145px 1fr;gap:35px;padding:28px 0;border-bottom:1px solid var(--line)}
+    .date{font-size:11px;font-weight:800;letter-spacing:1px;color:#8a6936;text-transform:uppercase}
+    .timeline h3{font-family:"Playfair Display",Georgia,serif;font-size:23px;font-weight:600}
+    .timeline .org{font-size:12px;color:var(--slate);margin:3px 0 10px;font-weight:700}
+    .timeline p{font-size:13px;color:#5c6b7e}
+
+    /* Research */
+    .research{background:#f0eee8}
+    .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+    .research-card{
+      background:#fff;border:1px solid #deded8;padding:30px;min-height:280px;display:flex;flex-direction:column;
+      transition:.2s;box-shadow:0 7px 30px rgba(7,17,31,.035)
+    }
+    .research-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .tag{font-size:10px;text-transform:uppercase;letter-spacing:1.7px;color:#8a6936;font-weight:800}
+    .research-card h3{font-family:"Playfair Display",Georgia,serif;font-size:25px;line-height:1.25;margin:22px 0 12px}
+    .research-card p{font-size:13px;color:var(--slate)}
+    .research-card .arrow{margin-top:auto;padding-top:25px;font-weight:800;font-size:12px;color:var(--ink)}
+
+    /* Values */
+    .values-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .statement{
+      font-family:"Playfair Display",Georgia,serif;font-size:38px;line-height:1.25;color:#1d2a3d;
+    }
+    .principles{border-top:1px solid var(--line)}
+    .principle{display:grid;grid-template-columns:45px 1fr;gap:20px;padding:23px 0;border-bottom:1px solid var(--line)}
+    .principle span{font-size:11px;font-weight:800;color:#8a6936;padding-top:4px}
+    .principle h3{font-size:16px;margin-bottom:4px}
+    .principle p{font-size:13px;color:var(--slate)}
+
+    /* Contact */
+    .contact{padding-top:40px}
+    .contact-box{
+      background:var(--ink);color:#fff;border-radius:18px;padding:68px;
+      display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;position:relative;overflow:hidden;
+    }
+    .contact-box:after{
+      content:"";position:absolute;width:430px;height:430px;border-radius:50%;
+      border:1px solid rgba(215,189,139,.13);right:-220px;top:-220px
+    }
+    .contact-box h2{max-width:700px}
+    .contact-box p{color:#9eacbd;max-width:650px;margin-top:15px}
+    .contact-actions{position:relative;z-index:1}
+
+    /* Footer */
+    footer{background:#050c15;color:#8290a3;padding:27px 0}
+    .footer{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:12px}
+    .footer-links{display:flex;gap:22px}
+    .footer-links a:hover{color:#fff}
+
+    /* Animation */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    /* Responsive */
+    @media(max-width:1000px){
+      .hero-grid,.intro-grid,.experience-grid,.values-grid{grid-template-columns:1fr}
+      .seal{margin:10px 0 0}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .research-grid{grid-template-columns:1fr}
+      .section-top{display:block}
+      .section-top .lead{margin-top:18px}
+      .contact-box{grid-template-columns:1fr}
+    }
+    @media(max-width:700px){
+      .wrap{width:min(calc(100% - 30px),var(--max))}
+      .navlinks{display:none;position:absolute;top:78px;left:15px;right:15px;padding:12px;background:var(--ink);border:1px solid rgba(255,255,255,.1);border-radius:10px;flex-direction:column;align-items:stretch;gap:0}
+      .navlinks.open{display:flex}
+      .navlinks a{padding:11px}
+      .nav-cta{border:0;padding:11px}
+      .menu{display:block}
+      .hero{min-height:auto;padding:135px 0 80px}
+      h1{letter-spacing:-2.5px}
+      .hero-meta{gap:18px;flex-wrap:wrap;margin-top:45px}
+      .seal{width:235px;height:235px}
+      .seal-initials{font-size:55px}
+      section{padding:78px 0}
+      .cards{grid-template-columns:1fr}
+      .card{min-height:230px}
+      .timeline-item{grid-template-columns:1fr;gap:8px}
+      .contact-box{padding:38px 25px}
+      .footer{align-items:flex-start;flex-direction:column}
+    }
+  </style>
 </head>
 
 <body>
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="logo">
+      <span class="logo-box">OA</span>
+      <span class="logo-name">Omar Alrozzi</span>
+    </a>
 
-    <h1>Omar Alrozzi</h1>
+    <button class="menu" id="menu" aria-label="Open menu">☰</button>
 
-    <h2>Legal & Human Rights Professional</h2>
+    <nav class="navlinks" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <p>
-        Legal Researcher | Legal Trainer | Public Policy |
-        Transitional Justice
-    </p>
+<main id="home">
 
-    <hr>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="kicker">Legal & Human Rights Professional</div>
+        <h1>Law with<br>purpose.</h1>
+        <p class="hero-role">
+          <strong>Legal Researcher</strong> · <strong>Legal Trainer</strong> ·
+          <strong>Public Policy</strong> · <strong>Transitional Justice</strong>
+        </p>
+        <p class="hero-desc">
+          Research-led legal thinking at the intersection of law, human rights,
+          institutions, public policy, and sustainable justice.
+        </p>
 
-    <h2>About Me</h2>
+        <div class="hero-actions">
+          <a class="btn gold" href="#contact">Discuss an Opportunity</a>
+          <a class="btn outline" href="#about">View Profile</a>
+        </div>
 
-    <p>
-        I am a Palestinian legal professional with experience in
-        legal research, public policy, human rights, transitional
-        justice, and capacity building.
-    </p>
+        <div class="hero-meta">
+          <div>Focus<strong>Law & Justice</strong></div>
+          <div>Practice<strong>Research & Training</strong></div>
+          <div>Perspective<strong>Public Interest</strong></div>
+        </div>
+      </div>
 
-    <h2>Education</h2>
+      <div class="seal reveal" aria-hidden="true">
+        <div class="seal-center">
+          <div class="seal-initials">OA</div>
+          <div class="seal-label">Law · Rights · Policy</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p>
-        LL.M. in Administrative and Financial Law
-        <br>
-        Mohammed V University, Rabat, Morocco
-    </p>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap intro-grid">
+      <div class="reveal">
+        <div class="eyebrow">01 — Profile</div>
+        <h2>A rigorous approach to complex legal questions.</h2>
+      </div>
 
-    <h2>Experience</h2>
+      <div class="intro-copy reveal">
+        <p>
+          I am a legal professional focused on legal research, human rights,
+          public policy, legal training, and transitional justice. My work is
+          grounded in disciplined research, careful analysis, and the ability
+          to translate complex legal issues into clear and practical insight.
+        </p>
+        <p>
+          I am particularly interested in questions where law meets institutions
+          and society: accountability, governance, rights protection, institutional
+          reform, and the development of fair and sustainable justice frameworks.
+        </p>
+        <div class="signature">
+          Omar Alrozzi
+          <small>Legal & Human Rights Professional</small>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p>
-        Legal Trainer | Project Coordinator | Researcher
-    </p>
+  <!-- EXPERTISE -->
+  <section id="expertise" class="dark">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <div class="eyebrow">02 — Expertise</div>
+          <h2>Areas of professional focus.</h2>
+        </div>
+        <p class="lead">
+          A focused professional profile that can grow with verified experience,
+          publications, projects, and institutional work.
+        </p>
+      </div>
 
-    <h2>Research Interests</h2>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="num">01</div>
+          <h3>Legal Research</h3>
+          <p>Legal analysis, research methodology, legal writing, comparative approaches, and structured argumentation.</p>
+        </article>
 
-    <p>
-        Transitional Justice, Human Rights, Investment Law,
-        Public Policy, and Fragile and Conflict-Affected Areas.
-    </p>
+        <article class="card reveal">
+          <div class="num">02</div>
+          <h3>Human Rights</h3>
+          <p>Rights-based approaches, accountability, protection frameworks, and justice-oriented legal analysis.</p>
+        </article>
 
-    <h2>Contact</h2>
+        <article class="card reveal">
+          <div class="num">03</div>
+          <h3>Public Policy</h3>
+          <p>Connecting legal frameworks with governance, institutions, policy development, and the public interest.</p>
+        </article>
 
-    <p>
-        Email: your-email@example.com
-    </p>
+        <article class="card reveal">
+          <div class="num">04</div>
+          <h3>Transitional Justice</h3>
+          <p>Accountability, truth, reparations, institutional reform, and pathways toward sustainable justice.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap experience-grid">
+      <div class="reveal">
+        <div class="eyebrow">03 — Experience</div>
+        <h2>Professional journey.</h2>
+        <p class="lead">
+          Add your verified positions, institutions, dates, and responsibilities
+          here to turn this section into a complete executive profile.
+        </p>
+      </div>
+
+      <div class="timeline reveal">
+        <article class="timeline-item">
+          <div class="date">Current</div>
+          <div>
+            <h3>Legal Research & Policy</h3>
+            <div class="org">Professional Focus</div>
+            <p>Research, analysis, legal writing, and engagement with law, policy, and justice-related questions.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="date">Professional</div>
+          <div>
+            <h3>Legal Training</h3>
+            <div class="org">Training & Education</div>
+            <p>Developing clear and practical legal learning experiences for students, professionals, and interested audiences.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="date">Focus Area</div>
+          <div>
+            <h3>Human Rights & Transitional Justice</h3>
+            <div class="org">Research Interest</div>
+            <p>Exploring accountability, institutional reform, rights protection, and sustainable approaches to justice.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" class="research">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <div class="eyebrow">04 — Research & Thought</div>
+          <h2>Questions worth examining.</h2>
+        </div>
+        <p class="lead">
+          Featured topics can later be replaced with your actual publications,
+          papers, presentations, or research projects.
+        </p>
+      </div>
+
+      <div class="research-grid">
+        <article class="research-card reveal">
+          <div class="tag">Human Rights</div>
+          <h3>Accountability, Rights & Institutional Responsibility</h3>
+          <p>Exploring how legal and institutional mechanisms can strengthen accountability and protection of fundamental rights.</p>
+          <div class="arrow">Research topic ↗</div>
+        </article>
+
+        <article class="research-card reveal">
+          <div class="tag">Public Policy</div>
+          <h3>Law, Governance & Public Interest</h3>
+          <p>Examining the role of legal frameworks in shaping effective institutions, sound policy, and public trust.</p>
+          <div class="arrow">Research topic ↗</div>
+        </article>
+
+        <article class="research-card reveal">
+          <div class="tag">Transitional Justice</div>
+          <h3>Justice After Conflict & Institutional Change</h3>
+          <p>Considering accountability, truth, reparations, and reform as components of durable justice.</p>
+          <div class="arrow">Research topic ↗</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section>
+    <div class="wrap values-grid">
+      <div class="reveal">
+        <div class="eyebrow">05 — Professional Philosophy</div>
+        <div class="statement">
+          “The strongest legal work combines intellectual rigor with a clear sense of responsibility.”
+        </div>
+      </div>
+
+      <div class="principles reveal">
+        <div class="principle">
+          <span>01</span>
+          <div><h3>Research before conclusion</h3><p>Build arguments on careful research and credible legal sources.</p></div>
+        </div>
+        <div class="principle">
+          <span>02</span>
+          <div><h3>Clarity without oversimplification</h3><p>Make complex legal and policy issues understandable while preserving their substance.</p></div>
+        </div>
+        <div class="principle">
+          <span>03</span>
+          <div><h3>People and institutions matter</h3><p>Consider both human impact and institutional realities when evaluating legal questions.</p></div>
+        </div>
+        <div class="principle">
+          <span>04</span>
+          <div><h3>Continuous learning</h3><p>Remain attentive to scholarship, comparative perspectives, and evolving legal developments.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="contact-box reveal">
+        <div>
+          <div class="eyebrow">06 — Contact</div>
+          <h2>Open to meaningful legal and policy conversations.</h2>
+          <p>
+            For professional opportunities, research collaboration, legal training,
+            speaking engagements, or other serious inquiries, get in touch.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <!-- Replace with your real email -->
+          <a class="btn gold" href="mailto:YOUR-EMAIL@example.com">Email Omar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer">
+    <div>© <span id="year"></span> Omar Alrozzi. All rights reserved.</div>
+    <div class="footer-links">
+      <!-- Replace # with your actual profile URLs -->
+      <a href="#">LinkedIn</a>
+      <a href="#">Research Profile</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menu = document.getElementById("menu");
+  const nav = document.getElementById("navlinks");
+
+  menu.addEventListener("click", () => nav.classList.toggle("open"));
+  nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.12});
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
