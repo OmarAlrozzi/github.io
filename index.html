@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Omar Alrozzi, LLM — Lawyer, peacebuilding professional and legal researcher focused on transitional justice, governance, human rights and public policy.">
+<meta name="description"
+content="Omar Alrozzi, LLM — Lawyer and peacebuilding professional focused on transitional justice, governance, human rights and public policy.">
 
 <meta name="theme-color" content="#07111f">
 
@@ -52,13 +53,14 @@ a{
 
 img{
     display:block;
-    width:100%;
+    max-width:100%;
 }
 
 .wrap{
     width:min(calc(100% - 44px),var(--max));
     margin:auto;
 }
+
 
 /* =========================
    NAVIGATION
@@ -70,13 +72,16 @@ header{
     left:0;
     right:0;
     z-index:50;
-    background:rgba(7,17,31,.92);
+
+    background:rgba(7,17,31,.94);
     backdrop-filter:blur(16px);
+
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .nav{
     height:76px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -86,6 +91,7 @@ header{
     display:flex;
     align-items:center;
     gap:12px;
+
     color:#fff;
     font-weight:700;
     font-size:14px;
@@ -94,10 +100,13 @@ header{
 .logo-mark{
     width:39px;
     height:39px;
+
     border:1px solid rgba(215,189,139,.7);
     border-radius:9px;
+
     display:grid;
     place-items:center;
+
     color:var(--gold2);
     font-size:11px;
 }
@@ -106,6 +115,7 @@ header{
     display:flex;
     gap:28px;
     align-items:center;
+
     color:#cbd5e1;
     font-size:13px;
     font-weight:600;
@@ -124,12 +134,16 @@ header{
 
 .menu{
     display:none;
+
     background:none;
     color:#fff;
+
     border:1px solid #ffffff33;
     border-radius:8px;
+
     padding:7px 10px;
 }
+
 
 /* =========================
    HERO
@@ -137,31 +151,43 @@ header{
 
 .hero{
     min-height:820px;
+
     background:var(--ink);
     color:#fff;
+
     display:flex;
     align-items:center;
+
     padding:140px 0 90px;
+
     position:relative;
     overflow:hidden;
 }
 
 .hero:before{
     content:"";
+
     position:absolute;
+
     width:800px;
     height:800px;
+
     border:1px solid #d7bd8b1c;
     border-radius:50%;
+
     right:-330px;
     top:-180px;
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:70px;
+
+    grid-template-columns:1.05fr .95fr;
+
+    gap:75px;
+
     align-items:center;
+
     position:relative;
     z-index:1;
 }
@@ -171,8 +197,11 @@ header{
     font-size:10px;
     text-transform:uppercase;
     letter-spacing:2.6px;
+
     font-weight:800;
+
     color:var(--gold2);
+
     margin-bottom:18px;
 }
 
@@ -184,8 +213,10 @@ header{
 
 .kicker:before{
     content:"";
+
     width:38px;
     height:1px;
+
     background:var(--gold);
 }
 
@@ -197,15 +228,21 @@ h3{
 
 h1{
     font-size:clamp(55px,8vw,100px);
+
     line-height:.92;
+
     letter-spacing:-4px;
+
     font-weight:600;
 }
 
 .hero-sub{
     font-size:20px;
+
     color:#dce4ee;
+
     max-width:720px;
+
     margin-top:27px;
 }
 
@@ -215,8 +252,11 @@ h1{
 
 .hero-desc{
     font-size:15px;
+
     color:#9eacbd;
+
     max-width:650px;
+
     margin-top:16px;
 }
 
@@ -224,18 +264,25 @@ h1{
     display:flex;
     gap:12px;
     flex-wrap:wrap;
+
     margin-top:32px;
 }
 
 .btn{
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
+
     min-height:49px;
+
     padding:0 20px;
+
     border-radius:8px;
+
     font-size:13px;
     font-weight:700;
+
     transition:.2s;
 }
 
@@ -253,76 +300,111 @@ h1{
     color:#fff;
 }
 
-/* HERO IMAGE */
+
+/* =========================
+   HERO PHOTO
+========================= */
 
 .hero-photo{
-    position:relative;
-    width:min(390px,100%);
+    width:min(100%,440px);
+
     margin-left:auto;
+
+    position:relative;
 }
 
-.hero-photo img{
-    aspect-ratio:4/5;
-    object-fit:cover;
-    object-position:center top;
+.hero-photo-frame{
+    width:100%;
+
+    aspect-ratio:4 / 5;
+
     border-radius:18px;
+
+    overflow:hidden;
+
     border:1px solid rgba(215,189,139,.45);
-    box-shadow:0 25px 70px rgba(0,0,0,.35);
+
+    background:#101c2b;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.28);
 }
 
-.hero-photo:before{
-    content:"";
-    position:absolute;
-    inset:14px -14px -14px 14px;
-    border:1px solid rgba(215,189,139,.25);
-    border-radius:18px;
-    z-index:-1;
+.hero-photo-frame img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    /*
+      Portrait position:
+      keeps the face/head visible
+      while filling the frame.
+    */
+    object-position:center 20%;
+
+    image-rendering:auto;
 }
 
 .hero-photo-caption{
     position:absolute;
-    left:20px;
-    bottom:20px;
-    background:rgba(7,17,31,.82);
+
+    left:18px;
+    bottom:18px;
+
+    padding:10px 13px;
+
+    border:1px solid rgba(255,255,255,.16);
+
+    background:rgba(7,17,31,.78);
+
     backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:10px;
-    padding:12px 15px;
-}
 
-.hero-photo-caption strong{
-    display:block;
+    border-radius:8px;
+
     color:#fff;
-    font-size:12px;
-}
 
-.hero-photo-caption span{
-    color:#9eacbd;
     font-size:10px;
-}
 
-/* HERO STATS */
+    text-transform:uppercase;
+
+    letter-spacing:1.8px;
+}
 
 .hero-stats{
     display:flex;
+
     gap:30px;
+
     margin-top:52px;
+
     padding-top:22px;
+
     border-top:1px solid #ffffff17;
+
     color:#93a1b4;
+
     font-size:10px;
+
     text-transform:uppercase;
+
     letter-spacing:1.3px;
 }
 
 .hero-stats b{
     display:block;
+
     color:#e6ebf2;
+
     font-size:12px;
+
     text-transform:none;
+
     letter-spacing:0;
+
     margin-top:3px;
 }
+
 
 /* =========================
    GENERAL SECTIONS
@@ -338,16 +420,22 @@ section{
 
 h2{
     font-size:clamp(35px,4.5vw,55px);
+
     line-height:1.1;
+
     letter-spacing:-1.4px;
 }
 
 .lead{
     color:var(--slate);
+
     font-size:15px;
+
     max-width:650px;
+
     margin-top:17px;
 }
+
 
 /* =========================
    PROFILE
@@ -355,27 +443,40 @@ h2{
 
 .profile{
     display:grid;
+
     grid-template-columns:.8fr 1.2fr;
-    gap:70px;
-    align-items:center;
+
+    gap:95px;
 }
 
-.profile-image{
+.profile-photo{
     margin-top:30px;
-    overflow:hidden;
+
     border-radius:14px;
+
+    overflow:hidden;
+
+    aspect-ratio:4 / 3;
+
+    background:#e7e5df;
+
     border:1px solid var(--line);
-    box-shadow:0 15px 45px rgba(7,17,31,.08);
 }
 
-.profile-image img{
-    aspect-ratio:4/3;
+.profile-photo img{
+    width:100%;
+    height:100%;
+
     object-fit:cover;
+
+    object-position:center 20%;
 }
 
 .copy{
     font-size:17px;
+
     line-height:1.9;
+
     color:#2a394d;
 }
 
@@ -385,11 +486,16 @@ h2{
 
 .quote{
     border-left:2px solid var(--gold);
+
     padding-left:20px;
+
     margin-top:27px;
+
     font:500 22px/1.45 "Playfair Display",Georgia,serif;
+
     color:#1c2b3e;
 }
+
 
 /* =========================
    EXPERTISE
@@ -410,72 +516,70 @@ h2{
 
 .top{
     display:flex;
+
     justify-content:space-between;
+
     align-items:end;
+
     gap:40px;
+
     margin-bottom:48px;
 }
 
 .cards{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     border-top:1px solid #ffffff17;
+
     border-left:1px solid #ffffff17;
 }
 
 .card{
-    position:relative;
-    overflow:hidden;
-    min-height:380px;
+    padding:29px;
+
+    min-height:250px;
+
     border-right:1px solid #ffffff17;
+
     border-bottom:1px solid #ffffff17;
+
     background:#ffffff03;
+
     transition:.25s;
 }
 
 .card:hover{
-    transform:translateY(-4px);
     background:#ffffff08;
-}
 
-.card-image{
-    height:175px;
-    overflow:hidden;
-}
-
-.card-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    filter:saturate(.8);
-    transition:transform .5s;
-}
-
-.card:hover .card-image img{
-    transform:scale(1.05);
-}
-
-.card-content{
-    padding:22px 25px 27px;
+    transform:translateY(-4px);
 }
 
 .num{
     font-size:10px;
+
     color:var(--gold2);
+
     letter-spacing:2px;
+
     font-weight:800;
 }
 
 .card h3{
-    font-size:22px;
+    font-size:24px;
+
     font-weight:500;
-    margin:12px 0 8px;
+
+    margin:55px 0 10px;
 }
 
 .card p{
     font-size:13px;
+
     color:#98a6b8;
 }
+
 
 /* =========================
    EXPERIENCE
@@ -483,7 +587,9 @@ h2{
 
 .experience{
     display:grid;
+
     grid-template-columns:.8fr 1.2fr;
+
     gap:90px;
 }
 
@@ -493,17 +599,25 @@ h2{
 
 .item{
     display:grid;
+
     grid-template-columns:125px 1fr;
+
     gap:28px;
+
     padding:25px 0;
+
     border-bottom:1px solid var(--line);
 }
 
 .date{
     font-size:10px;
+
     color:#8a6936;
+
     font-weight:800;
+
     letter-spacing:1px;
+
     text-transform:uppercase;
 }
 
@@ -513,92 +627,230 @@ h2{
 
 .org{
     font-size:12px;
+
     color:var(--slate);
+
     font-weight:700;
+
     margin:3px 0 7px;
 }
 
 .item p{
     font-size:13px;
+
     color:#5d6b7e;
 }
 
-/* =========================
+
+/* =================================================
    VISUAL PORTFOLIO
-========================= */
+================================================= */
 
-.portfolio{
-    background:#fff;
-}
+.visual-portfolio{
+    background:#0b1624;
 
-.portfolio-intro{
-    max-width:760px;
-    margin-bottom:48px;
-}
-
-.portfolio-grid{
-    display:grid;
-    grid-template-columns:1.35fr .65fr;
-    gap:18px;
-}
-
-.portfolio-item{
-    position:relative;
-    overflow:hidden;
-    border-radius:14px;
-    min-height:360px;
-    background:#07111f;
-}
-
-.portfolio-item.large{
-    min-height:520px;
-}
-
-.portfolio-item img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:transform .6s ease;
-}
-
-.portfolio-item:hover img{
-    transform:scale(1.04);
-}
-
-.portfolio-overlay{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:35px 28px 25px;
-    background:linear-gradient(transparent,rgba(7,17,31,.92));
     color:#fff;
 }
 
-.portfolio-overlay .tag{
-    color:var(--gold2);
-    font-size:9px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-weight:800;
-}
-
-.portfolio-overlay h3{
-    font-size:27px;
-    margin-top:7px;
-}
-
-.portfolio-overlay p{
-    color:#cbd5e1;
-    font-size:12px;
-    max-width:520px;
-    margin-top:5px;
-}
-
-.portfolio-side{
+.visual-grid{
     display:grid;
+
+    grid-template-columns:1.35fr .65fr;
+
+    gap:18px;
+
+    margin-top:45px;
+}
+
+
+/*
+  MAIN IMAGE CARD
+*/
+.visual-card{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:14px;
+
+    background:#101c2b;
+
+    min-height:360px;
+
+    border:1px solid rgba(255,255,255,.09);
+
+    isolation:isolate;
+}
+
+
+/*
+  LARGE GOVERNANCE IMAGE
+*/
+.visual-card.large{
+    min-height:560px;
+}
+
+
+/*
+  IMPORTANT:
+  All images fill their card.
+  They are cropped without distortion.
+*/
+.visual-card picture{
+    position:absolute;
+
+    inset:0;
+
+    display:block;
+
+    width:100%;
+    height:100%;
+}
+
+.visual-card img{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    transition:
+        transform .7s ease,
+        filter .5s ease;
+}
+
+
+/*
+  Individual image positioning.
+  This prevents important content from being
+  cut off when images have different proportions.
+*/
+
+.visual-card.governance img{
+    object-position:center 50%;
+}
+
+.visual-card.peace img{
+    object-position:center 45%;
+}
+
+.visual-card.justice img{
+    object-position:center 45%;
+}
+
+.visual-card.youth img{
+    object-position:center 40%;
+}
+
+.visual-card.research-image img{
+    object-position:center 45%;
+}
+
+
+/*
+  Slight editorial zoom on hover
+*/
+.visual-card:hover img{
+    transform:scale(1.035);
+}
+
+
+/*
+  Dark gradient over images
+*/
+.visual-overlay{
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.28) 48%,
+            rgba(0,0,0,.04) 75%
+        );
+}
+
+
+/*
+  Text over image
+*/
+.visual-content{
+    position:absolute;
+
+    left:26px;
+    right:26px;
+    bottom:25px;
+
+    z-index:2;
+}
+
+.visual-tag{
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    color:var(--gold2);
+
+    font-weight:800;
+
+    margin-bottom:7px;
+}
+
+.visual-content h3{
+    font-size:28px;
+
+    line-height:1.15;
+
+    font-weight:500;
+}
+
+.visual-content p{
+    font-size:12px;
+
+    color:#d0d8e2;
+
+    margin-top:7px;
+
+    max-width:600px;
+}
+
+
+/*
+  RIGHT SIDE
+*/
+.visual-side{
+    display:grid;
+
     gap:18px;
 }
+
+.visual-side .visual-card{
+    min-height:271px;
+}
+
+
+/*
+  SECOND ROW
+*/
+.visual-grid.second-row{
+    margin-top:18px;
+
+    grid-template-columns:1fr 1fr;
+}
+
 
 /* =========================
    RESEARCH
@@ -610,36 +862,50 @@ h2{
 
 .research-grid{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:15px;
+
     margin-top:44px;
 }
 
 .r-card{
     background:#fff;
+
     border:1px solid #dddcd6;
+
     padding:26px;
-    min-height:250px;
+
+    min-height:220px;
 }
 
 .tag{
     font-size:10px;
+
     color:#8a6936;
+
     text-transform:uppercase;
+
     letter-spacing:1.7px;
+
     font-weight:800;
 }
 
 .r-card h3{
     font-size:22px;
+
     line-height:1.25;
+
     margin:19px 0 10px;
 }
 
 .r-card p{
     font-size:13px;
+
     color:var(--slate);
 }
+
 
 /* =========================
    EDUCATION
@@ -651,38 +917,49 @@ h2{
 
 .edu-grid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:16px;
+
     margin-top:42px;
 }
 
 .edu{
     border:1px solid var(--line);
+
     padding:30px;
 }
 
 .year{
     font-size:10px;
+
     color:#8a6936;
+
     font-weight:800;
+
     letter-spacing:1.5px;
 }
 
 .edu h3{
     font-size:25px;
+
     margin:13px 0 5px;
 }
 
 .edu p,
 .edu li{
     font-size:13px;
+
     color:var(--slate);
 }
 
 .edu ul{
     padding-left:18px;
+
     margin-top:13px;
 }
+
 
 /* =========================
    CONTACT
@@ -694,38 +971,56 @@ h2{
 
 .contact-box{
     background:var(--ink);
+
     color:#fff;
+
     border-radius:16px;
+
     padding:60px;
+
     display:grid;
+
     grid-template-columns:1fr auto;
+
     gap:40px;
+
     align-items:center;
+
     position:relative;
+
     overflow:hidden;
 }
 
 .contact-box:after{
     content:"";
+
     position:absolute;
+
     width:380px;
     height:380px;
+
     border:1px solid #d7bd8b20;
+
     border-radius:50%;
+
     right:-200px;
     top:-200px;
 }
 
 .contact-box p{
     color:#9eacbd;
+
     max-width:630px;
+
     margin-top:13px;
 }
 
 .contact-actions{
     position:relative;
+
     z-index:1;
 }
+
 
 /* =========================
    FOOTER
@@ -733,14 +1028,19 @@ h2{
 
 footer{
     background:#050c15;
+
     color:#8290a3;
+
     padding:25px 0;
+
     font-size:12px;
 }
 
 .footer{
     display:flex;
+
     justify-content:space-between;
+
     gap:20px;
 }
 
@@ -748,24 +1048,29 @@ footer{
     color:#fff;
 }
 
+
 /* =========================
    ANIMATION
 ========================= */
 
 .reveal{
     opacity:0;
+
     transform:translateY(18px);
+
     transition:.7s;
 }
 
 .reveal.show{
     opacity:1;
+
     transform:none;
 }
 
-/* =========================
+
+/* =================================================
    TABLET
-========================= */
+================================================= */
 
 @media(max-width:1000px){
 
@@ -776,8 +1081,9 @@ footer{
     }
 
     .hero-photo{
-        margin:10px 0 0;
-        width:min(360px,100%);
+        margin:5px 0;
+
+        max-width:520px;
     }
 
     .cards{
@@ -788,11 +1094,15 @@ footer{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .portfolio-grid{
+    .visual-grid{
         grid-template-columns:1fr;
     }
 
-    .portfolio-side{
+    .visual-side{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .visual-grid.second-row{
         grid-template-columns:1fr 1fr;
     }
 
@@ -809,9 +1119,10 @@ footer{
     }
 }
 
-/* =========================
+
+/* =================================================
    MOBILE
-========================= */
+================================================= */
 
 @media(max-width:700px){
 
@@ -821,16 +1132,26 @@ footer{
 
     .links{
         display:none;
+
         position:absolute;
+
         top:76px;
+
         left:15px;
         right:15px;
+
         background:var(--ink);
+
         padding:10px;
+
         border:1px solid #ffffff14;
+
         border-radius:9px;
+
         flex-direction:column;
+
         align-items:stretch;
+
         gap:0;
     }
 
@@ -852,21 +1173,21 @@ footer{
 
     .hero{
         padding:130px 0 75px;
+
         min-height:auto;
+    }
+
+    .hero-grid{
+        gap:42px;
     }
 
     h1{
         letter-spacing:-2.5px;
     }
 
-    .hero-photo{
-        width:100%;
-        max-width:330px;
-        margin:auto;
-    }
-
     .hero-stats{
         flex-wrap:wrap;
+
         gap:17px;
     }
 
@@ -876,18 +1197,34 @@ footer{
 
     .cards,
     .research-grid,
-    .edu-grid,
-    .portfolio-side{
+    .edu-grid{
         grid-template-columns:1fr;
     }
 
-    .portfolio-item,
-    .portfolio-item.large{
-        min-height:360px;
+    .visual-side{
+        grid-template-columns:1fr;
+    }
+
+    .visual-grid.second-row{
+        grid-template-columns:1fr;
+    }
+
+    .visual-card.large{
+        min-height:430px;
+    }
+
+    .visual-card,
+    .visual-side .visual-card{
+        min-height:320px;
+    }
+
+    .visual-content h3{
+        font-size:24px;
     }
 
     .item{
         grid-template-columns:1fr;
+
         gap:5px;
     }
 
@@ -903,7 +1240,9 @@ footer{
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVIGATION
@@ -914,21 +1253,41 @@ footer{
 <div class="wrap nav">
 
 <a class="logo" href="#home">
-    <span class="logo-mark">OA</span>
-    <span>Omar Alrozzi, LLM</span>
+
+<span class="logo-mark">OA</span>
+
+<span>Omar Alrozzi, LLM</span>
+
 </a>
 
-<button class="menu" id="menu">☰</button>
+
+<button
+class="menu"
+id="menu"
+aria-label="Open navigation">
+
+☰
+
+</button>
+
 
 <nav class="links" id="links">
 
 <a href="#about">Profile</a>
+
 <a href="#expertise">Expertise</a>
+
 <a href="#experience">Experience</a>
+
 <a href="#portfolio">Portfolio</a>
+
 <a href="#research">Research</a>
+
 <a href="#education">Education</a>
-<a href="#contact" class="contact-link">Contact</a>
+
+<a href="#contact" class="contact-link">
+Contact
+</a>
 
 </nav>
 
@@ -937,7 +1296,9 @@ footer{
 </header>
 
 
+
 <main id="home">
+
 
 <!-- =========================
      HERO
@@ -947,45 +1308,68 @@ footer{
 
 <div class="wrap hero-grid">
 
+
 <div class="reveal">
 
 <div class="kicker">
 Law · Governance · Peacebuilding
 </div>
 
+
 <h1>
 Omar<br>
 Alrozzi
 </h1>
 
+
 <p class="hero-sub">
-<strong>Lawyer</strong> · Peacebuilding Professional · Legal Researcher · Legal Trainer
+
+<strong>Lawyer</strong>
+· Peacebuilding Professional
+· Legal Researcher
+· Legal Trainer
+
 </p>
 
+
 <p class="hero-desc">
-Focused on transitional justice, governance reform, human rights, public policy, and inclusive peacebuilding in conflict-affected contexts.
+
+Focused on transitional justice, governance reform,
+human rights, public policy, and inclusive peacebuilding
+in conflict-affected contexts.
+
 </p>
+
 
 <div class="actions">
 
-<a class="btn gold" href="#contact">
+<a
+class="btn gold"
+href="#contact">
+
 Get in Touch
+
 </a>
 
-<a class="btn outline"
+
+<a
+class="btn outline"
 href="https://www.linkedin.com/in/omaralrozzi/"
 target="_blank"
 rel="noopener">
+
 LinkedIn
+
 </a>
 
 </div>
+
 
 <div class="hero-stats">
 
 <div>
 Experience
-<b>3–5 Years</b>
+<b>7+ Years</b>
 </div>
 
 <div>
@@ -1003,31 +1387,36 @@ Focus
 </div>
 
 
+
 <!-- HERO PHOTO -->
 
 <div class="hero-photo reveal">
 
+<div class="hero-photo-frame">
+
 <img
-src="hero.jpg.jpg"
-alt="Omar Alrozzi"
-loading="eager"
->
+src="profile.jpg.jpeg"
+alt="Omar Alrozzi — professional portrait"
+width="880"
+height="1100"
+fetchpriority="high">
+
+</div>
+
 
 <div class="hero-photo-caption">
 
-<strong>Omar Alrozzi, LLM</strong>
-
-<span>
 Law · Rights · Peace
-</span>
 
 </div>
 
 </div>
+
 
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1038,41 +1427,63 @@ Law · Rights · Peace
 
 <div class="wrap profile">
 
+
 <div class="reveal">
 
 <div class="eyebrow">
 01 — Profile
 </div>
 
+
 <h2>
-Legal expertise with a commitment to justice and sustainable peace.
+Legal expertise with a commitment
+to justice and sustainable peace.
 </h2>
 
-<div class="profile-image">
+
+<div class="profile-photo">
 
 <img
 src="profile.jpg.jpeg"
 alt="Omar Alrozzi professional portrait"
-loading="lazy"
->
+width="1200"
+height="900"
+loading="lazy">
 
 </div>
 
 </div>
+
 
 
 <div class="copy reveal">
 
 <p>
-Palestinian lawyer and peacebuilding professional with 3–5 years of experience in transitional justice, governance reform, and youth engagement in conflict-affected contexts.
+
+Palestinian lawyer and peacebuilding professional
+with over seven years of experience in transitional
+justice, governance reform, and youth engagement
+in conflict-affected contexts.
+
 </p>
+
 
 <p>
-Experienced in coordinating multi-stakeholder initiatives involving civil society, government institutions, and international agencies, with a focus on evidence-based policy development and capacity building.
+
+Experienced in coordinating multi-stakeholder
+initiatives involving civil society, government
+institutions, and international agencies, with a
+focus on evidence-based policy development and
+capacity building.
+
 </p>
 
+
 <div class="quote">
-“Law, when connected to people and institutions, can become a meaningful instrument for sustainable change.”
+
+“Law, when connected to people and institutions,
+can become a meaningful instrument for sustainable change.”
+
 </div>
 
 </div>
@@ -1082,6 +1493,7 @@ Experienced in coordinating multi-stakeholder initiatives involving civil societ
 </section>
 
 
+
 <!-- =========================
      EXPERTISE
 ========================= -->
@@ -1089,6 +1501,7 @@ Experienced in coordinating multi-stakeholder initiatives involving civil societ
 <section id="expertise" class="dark">
 
 <div class="wrap">
+
 
 <div class="top reveal">
 
@@ -1104,31 +1517,22 @@ Core areas of focus.
 
 </div>
 
+
 <p class="lead">
-A concise view of the professional themes that define my work.
+
+A concise view of the professional themes
+that define my work.
+
 </p>
 
 </div>
 
 
+
 <div class="cards">
 
 
-<!-- Transitional Justice -->
-
 <article class="card reveal">
-
-<div class="card-image">
-
-<img
-src="transitional-justice.jpg.jpg"
-alt="Transitional Justice"
-loading="lazy"
->
-
-</div>
-
-<div class="card-content">
 
 <div class="num">
 01
@@ -1139,29 +1543,17 @@ Transitional Justice
 </h3>
 
 <p>
-Justice mechanisms, accountability, institutional reform, and strategy development.
-</p>
 
-</div>
+Justice mechanisms, accountability,
+institutional reform, and strategy development.
+
+</p>
 
 </article>
 
 
-<!-- Governance -->
 
 <article class="card reveal">
-
-<div class="card-image">
-
-<img
-src="law-governance.jpg.jpg"
-alt="Law and Governance"
-loading="lazy"
->
-
-</div>
-
-<div class="card-content">
 
 <div class="num">
 02
@@ -1172,62 +1564,38 @@ Governance & Rule of Law
 </h3>
 
 <p>
-Governance alignment, institutional responsibility, legal compliance, and reform.
-</p>
 
-</div>
+Governance alignment, institutional responsibility,
+legal compliance, and reform.
+
+</p>
 
 </article>
 
 
-<!-- Youth -->
 
 <article class="card reveal">
-
-<div class="card-image">
-
-<img
-src="youth-leadership.jpg.jpg"
-alt="Youth Leadership"
-loading="lazy"
->
-
-</div>
-
-<div class="card-content">
 
 <div class="num">
 03
 </div>
 
 <h3>
-Youth & Civic Participation
+Human Rights
 </h3>
 
 <p>
-Youth leadership, civic engagement, capacity building, and meaningful participation.
-</p>
 
-</div>
+Human rights education, international humanitarian law,
+civic engagement, and rights-based approaches.
+
+</p>
 
 </article>
 
 
-<!-- Peacebuilding -->
 
 <article class="card reveal">
-
-<div class="card-image">
-
-<img
-src="peacebuilding.jpg.jpg"
-alt="Peacebuilding"
-loading="lazy"
->
-
-</div>
-
-<div class="card-content">
 
 <div class="num">
 04
@@ -1238,10 +1606,11 @@ Peacebuilding
 </h3>
 
 <p>
-Conflict transformation, dialogue, social cohesion, and inclusive peacebuilding.
-</p>
 
-</div>
+Conflict transformation, youth leadership,
+dialogue, social cohesion, and civic participation.
+
+</p>
 
 </article>
 
@@ -1253,6 +1622,7 @@ Conflict transformation, dialogue, social cohesion, and inclusive peacebuilding.
 </section>
 
 
+
 <!-- =========================
      EXPERIENCE
 ========================= -->
@@ -1260,6 +1630,7 @@ Conflict transformation, dialogue, social cohesion, and inclusive peacebuilding.
 <section id="experience">
 
 <div class="wrap experience">
+
 
 <div class="reveal">
 
@@ -1272,10 +1643,14 @@ Selected professional experience.
 </h2>
 
 <p class="lead">
-A deliberately concise selection of roles most relevant to my current professional profile.
+
+A deliberately concise selection of roles
+most relevant to my current professional profile.
+
 </p>
 
 </div>
+
 
 
 <div class="timeline reveal">
@@ -1298,12 +1673,17 @@ TEDx Shabab St · Oman
 </div>
 
 <p>
-Legal compliance, governance alignment, contracts, stakeholder relations, ethical content review, and youth leadership coaching.
+
+Legal compliance, governance alignment,
+contracts, stakeholder relations, ethical content
+review, and youth leadership coaching.
+
 </p>
 
 </div>
 
 </div>
+
 
 
 <div class="item">
@@ -1323,12 +1703,16 @@ MUSAWA Center · Palestine
 </div>
 
 <p>
-Transitional justice initiatives, policy dialogue, and collaboration with UN and EU agencies.
+
+Transitional justice initiatives, policy dialogue,
+and collaboration with UN and EU agencies.
+
 </p>
 
 </div>
 
 </div>
+
 
 
 <div class="item">
@@ -1348,7 +1732,11 @@ Amnesty International · Morocco
 </div>
 
 <p>
-Training on Human Rights and International Humanitarian Law and support for youth civic engagement campaigns.
+
+Training on Human Rights and International
+Humanitarian Law and support for youth civic
+engagement campaigns.
+
 </p>
 
 </div>
@@ -1363,105 +1751,116 @@ Training on Human Rights and International Humanitarian Law and support for yout
 </section>
 
 
-<!-- =========================
-     VISUAL PORTFOLIO
-========================= -->
 
-<section id="portfolio" class="portfolio">
+<!-- =====================================================
+     VISUAL PORTFOLIO
+===================================================== -->
+
+<section
+id="portfolio"
+class="visual-portfolio">
+
 
 <div class="wrap">
 
-<div class="portfolio-intro reveal">
+
+<div class="top reveal">
+
+<div>
 
 <div class="eyebrow">
 04 — Visual Portfolio
 </div>
 
 <h2>
-Law, peacebuilding & institutional transformation.
+Law, dialogue, institutions and civic participation.
 </h2>
 
+</div>
+
+
 <p class="lead">
-A visual selection reflecting the professional themes, research interests, and areas of practice that define my work.
+
+A restrained editorial image selection
+supporting the professional themes of the portfolio.
+
 </p>
 
 </div>
 
 
-<div class="portfolio-grid">
+
+<!-- =========================
+     ROW 1
+========================= -->
+
+<div class="visual-grid">
 
 
-<!-- Main Image -->
+<!-- GOVERNANCE -->
 
-<div class="portfolio-item large reveal">
+<article
+class="visual-card large governance reveal">
 
-<img
-src="transitional-justice.jpg.jpg"
-alt="Transitional Justice and Institutional Reform"
-loading="lazy"
->
-
-<div class="portfolio-overlay">
-
-<div class="tag">
-Justice
-</div>
-
-<h3>
-Transitional Justice & Institutional Reform
-</h3>
-
-<p>
-Accountability, institutional transformation, and justice mechanisms.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="portfolio-side">
-
-
-<!-- Governance -->
-
-<div class="portfolio-item reveal">
 
 <img
 src="law-governance.jpg.jpg"
-alt="Governance and Rule of Law"
-loading="lazy"
->
+alt="Governance and rule of law"
+width="1600"
+height="1100"
+loading="lazy">
 
-<div class="portfolio-overlay">
 
-<div class="tag">
-Governance
+<div class="visual-overlay"></div>
+
+
+<div class="visual-content">
+
+<div class="visual-tag">
+01 · Governance
 </div>
 
 <h3>
-Rule of Law
+Governance & Rule of Law
 </h3>
 
-</div>
+<p>
+Institutions, accountability, legal systems
+and public life.
+</p>
 
 </div>
 
+</article>
 
-<!-- Peacebuilding -->
 
-<div class="portfolio-item reveal">
+
+<!-- RIGHT COLUMN -->
+
+<div class="visual-side">
+
+
+<!-- PEACEBUILDING -->
+
+<article
+class="visual-card peace reveal">
+
 
 <img
 src="peacebuilding.jpg.jpg"
-alt="Peacebuilding and Conflict Transformation"
-loading="lazy"
->
+alt="Peacebuilding and dialogue"
+width="1200"
+height="850"
+loading="lazy">
 
-<div class="portfolio-overlay">
 
-<div class="tag">
-Peace
+<div class="visual-overlay"></div>
+
+
+<div class="visual-content">
+
+<div class="visual-tag">
+02 · Peace
 </div>
 
 <h3>
@@ -1470,63 +1869,118 @@ Peacebuilding
 
 </div>
 
+</article>
+
+
+
+<!-- TRANSITIONAL JUSTICE -->
+
+<article
+class="visual-card justice reveal">
+
+
+<img
+src="transitional-justice.jpg.jpg"
+alt="Transitional justice and institutional reform"
+width="1200"
+height="850"
+loading="lazy">
+
+
+<div class="visual-overlay"></div>
+
+
+<div class="visual-content">
+
+<div class="visual-tag">
+03 · Justice
+</div>
+
+<h3>
+Transitional Justice
+</h3>
+
+</div>
+
+</article>
+
+
+</div>
+
 </div>
 
 
-</div>
 
-</div>
+<!-- =========================
+     ROW 2
+========================= -->
 
-
-<!-- SECOND ROW -->
-
-<div class="portfolio-grid" style="margin-top:18px;">
+<div class="visual-grid second-row">
 
 
-<div class="portfolio-item reveal">
+<!-- YOUTH -->
+
+<article
+class="visual-card youth reveal">
+
 
 <img
 src="youth-leadership.jpg.jpg"
-alt="Youth Leadership and Civic Participation"
-loading="lazy"
->
+alt="Youth leadership and civic participation"
+width="1200"
+height="850"
+loading="lazy">
 
-<div class="portfolio-overlay">
 
-<div class="tag">
-Youth
+<div class="visual-overlay"></div>
+
+
+<div class="visual-content">
+
+<div class="visual-tag">
+04 · Youth
 </div>
 
 <h3>
-Youth Leadership
+Youth Leadership & Civic Participation
 </h3>
 
 </div>
 
-</div>
+</article>
 
 
-<div class="portfolio-item reveal">
+
+<!-- RESEARCH -->
+
+<article
+class="visual-card research-image reveal">
+
 
 <img
 src="research.jpg.jpeg"
-alt="Legal and Policy Research"
-loading="lazy"
->
+alt="Legal and policy research"
+width="1200"
+height="850"
+loading="lazy">
 
-<div class="portfolio-overlay">
 
-<div class="tag">
-Research
+<div class="visual-overlay"></div>
+
+
+<div class="visual-content">
+
+<div class="visual-tag">
+05 · Research
 </div>
 
 <h3>
-Legal & Policy Research
+Research & Policy
 </h3>
 
 </div>
 
-</div>
+</article>
 
 
 </div>
@@ -1534,6 +1988,7 @@ Legal & Policy Research
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1543,6 +1998,7 @@ Legal & Policy Research
 <section id="research" class="research">
 
 <div class="wrap">
+
 
 <div class="top reveal">
 
@@ -1558,11 +2014,16 @@ Where law meets transformation.
 
 </div>
 
+
 <p class="lead">
-Research interests drawn directly from my professional and academic focus.
+
+Research interests drawn directly from my
+professional and academic focus.
+
 </p>
 
 </div>
+
 
 
 <div class="research-grid">
@@ -1579,10 +2040,14 @@ Transitional Justice & Institutional Reform
 </h3>
 
 <p>
-Accountability, institutional transformation, and justice mechanisms in conflict-affected contexts.
+
+Accountability, institutional transformation,
+and justice mechanisms in conflict-affected contexts.
+
 </p>
 
 </div>
+
 
 
 <div class="r-card reveal">
@@ -1596,10 +2061,14 @@ Peacebuilding & Conflict Transformation
 </h3>
 
 <p>
-Dialogue, social cohesion, and pathways toward sustainable peace.
+
+Dialogue, social cohesion, and pathways
+toward sustainable peace.
+
 </p>
 
 </div>
+
 
 
 <div class="r-card reveal">
@@ -1613,10 +2082,14 @@ Governance & Rule of Law
 </h3>
 
 <p>
-Inclusive governance, institutional accountability, and the role of law in public life.
+
+Inclusive governance, institutional accountability,
+and the role of law in public life.
+
 </p>
 
 </div>
+
 
 
 <div class="r-card reveal">
@@ -1630,7 +2103,10 @@ Youth Leadership & Civic Participation
 </h3>
 
 <p>
-Youth engagement, leadership development, and meaningful civic participation.
+
+Youth engagement, leadership development,
+and meaningful civic participation.
+
 </p>
 
 </div>
@@ -1643,13 +2119,18 @@ Youth engagement, leadership development, and meaningful civic participation.
 </section>
 
 
+
 <!-- =========================
      EDUCATION
 ========================= -->
 
-<section id="education" class="edu-section">
+<section
+id="education"
+class="edu-section">
+
 
 <div class="wrap">
+
 
 <div class="reveal">
 
@@ -1662,6 +2143,7 @@ Academic foundation.
 </h2>
 
 </div>
+
 
 
 <div class="edu-grid">
@@ -1678,13 +2160,15 @@ Master of Laws (LLM)
 </h3>
 
 <p>
-Administrative and Financial Law · Mohammed V University, Morocco
+Administrative and Financial Law
+· Mohammed V University, Morocco
 </p>
 
 <ul>
 
 <li>
-Comparative thesis on fiscal policy and economic security for foreign investors in Morocco and Palestine.
+Comparative thesis on fiscal policy and economic
+security for foreign investors in Morocco and Palestine.
 </li>
 
 <li>
@@ -1694,6 +2178,7 @@ Final Grade: 17/20
 </ul>
 
 </article>
+
 
 
 <article class="edu reveal">
@@ -1713,7 +2198,8 @@ University of Palestine, Palestine
 <ul>
 
 <li>
-Graduated at the top of the cohort for four consecutive years.
+Graduated at the top of the cohort
+for four consecutive years.
 </li>
 
 <li>
@@ -1732,43 +2218,62 @@ Final Grade: 94%
 </section>
 
 
+
 <!-- =========================
      CONTACT
 ========================= -->
 
-<section id="contact" class="contact">
+<section
+id="contact"
+class="contact">
+
 
 <div class="wrap">
 
+
 <div class="contact-box reveal">
+
 
 <div>
 
-<div class="eyebrow" style="color:#d7bd8b">
+<div
+class="eyebrow"
+style="color:#d7bd8b">
+
 07 — Contact
+
 </div>
+
 
 <h2>
 Open to meaningful professional opportunities.
 </h2>
 
+
 <p>
-For research collaboration, legal and policy opportunities, training, speaking engagements, or professional partnerships.
+
+For research collaboration, legal and policy
+opportunities, training, speaking engagements,
+or professional partnerships.
+
 </p>
 
 </div>
+
 
 
 <div class="contact-actions">
 
 <a
 class="btn gold"
-href="mailto:o.alrozzi@gmail.com"
->
+href="mailto:o.alrozzi@gmail.com">
+
 Email Omar
+
 </a>
 
 </div>
+
 
 </div>
 
@@ -1776,7 +2281,9 @@ Email Omar
 
 </section>
 
+
 </main>
+
 
 
 <!-- =========================
@@ -1787,85 +2294,127 @@ Email Omar
 
 <div class="wrap footer">
 
+
 <div>
-© <span id="year"></span> Omar Alrozzi, LLM. All rights reserved.
+
+© <span id="year"></span>
+Omar Alrozzi, LLM.
+All rights reserved.
+
 </div>
+
 
 <div>
 
 <a
 href="https://www.linkedin.com/in/omaralrozzi/"
 target="_blank"
-rel="noopener"
->
+rel="noopener">
+
 LinkedIn
+
 </a>
 
 ·
 
 <a href="mailto:o.alrozzi@gmail.com">
+
 o.alrozzi@gmail.com
+
 </a>
 
 </div>
+
 
 </div>
 
 </footer>
 
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
-const menu = document.getElementById("menu");
-const links = document.getElementById("links");
+const menu =
+document.getElementById("menu");
 
-menu.addEventListener("click", () => {
-    links.classList.toggle("open");
-});
+const links =
+document.getElementById("links");
 
-links.querySelectorAll("a").forEach(a => {
 
-    a.addEventListener("click", () => {
-        links.classList.remove("open");
-    });
+menu.addEventListener(
+"click",
+() => {
 
-});
+links.classList.toggle("open");
 
-document.getElementById("year").textContent =
+}
+);
+
+
+links
+.querySelectorAll("a")
+.forEach(
+a =>
+
+a.addEventListener(
+"click",
+() =>
+
+links.classList.remove("open")
+
+)
+);
+
+
+document
+.getElementById("year")
+.textContent =
 new Date().getFullYear();
 
 
-const obs = new IntersectionObserver(
-    entries => {
 
-        entries.forEach(entry => {
+const obs =
+new IntersectionObserver(
 
-            if(entry.isIntersecting){
+entries => {
 
-                entry.target.classList.add("show");
+entries.forEach(
 
-                obs.unobserve(entry.target);
+entry => {
 
-            }
+if(entry.isIntersecting){
 
-        });
+entry.target.classList.add("show");
 
-    },
-    {
-        threshold:.1
-    }
+obs.unobserve(entry.target);
+
+}
+
+}
+
+);
+
+},
+
+{
+threshold:.1
+}
+
 );
 
 
 document
 .querySelectorAll(".reveal")
-.forEach(element => {
-
-    obs.observe(element);
-
-});
+.forEach(
+el => obs.observe(el)
+);
 
 </script>
+
 
 </body>
 </html>
