@@ -5,23 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Omar Alrozzi | Law, Governance & Peacebuilding</title>
+  <meta name="description"
+    content="Omar Alrozzi, LLM — Lawyer, governance professional and legal researcher focused on transitional justice, human rights, public policy and peacebuilding.">
 
-  <meta
-    name="description"
-    content="Omar Alrozzi is a lawyer and governance professional working across transitional justice, human rights, public policy and peacebuilding."
-  >
+  <meta name="theme-color" content="#07111f">
 
-  <meta
-    name="keywords"
-    content="Omar Alrozzi, Lawyer, Transitional Justice, Governance, Peacebuilding, Human Rights, Legal Research, Public Policy"
-  >
+  <title>Omar Alrozzi, LLM | Law · Governance · Peacebuilding</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
   <style>
+    :root {
+      --ink: #07111f;
+      --paper: #f8f7f3;
+      --white: #fff;
+      --gold: #b99250;
+      --gold2: #d7bd8b;
+      --slate: #68768a;
+      --line: #dfe3e8;
+      --max: 1200px;
+    }
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -29,10 +42,11 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f7f4;
-      color: #1d1d1d;
+      font-family: "DM Sans", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     a {
@@ -40,452 +54,1066 @@
       color: inherit;
     }
 
-    .container {
-      width: min(1120px, 90%);
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(calc(100% - 44px), var(--max));
       margin: auto;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================== */
 
-    nav {
-      position: sticky;
+    header {
+      position: fixed;
       top: 0;
-      z-index: 1000;
-      background: rgba(248, 247, 244, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #dedbd4;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(7, 17, 31, .94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
     }
 
-    .nav-container {
-      height: 72px;
+    .nav {
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .nav-links {
       display: flex;
-      gap: 28px;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-weight: 700;
       font-size: 14px;
     }
 
-    .nav-links a:hover {
-      opacity: 0.6;
+    .logo-mark {
+      width: 39px;
+      height: 39px;
+      border: 1px solid rgba(215, 189, 139, .7);
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      color: var(--gold2);
+      font-size: 11px;
     }
 
-    /* HERO */
+    .links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .links a {
+      transition: color .2s ease;
+    }
+
+    .links a:hover {
+      color: #fff;
+    }
+
+    .contact-link {
+      border: 1px solid rgba(215, 189, 139, .55);
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    .menu {
+      display: none;
+      background: none;
+      color: #fff;
+      border: 1px solid #ffffff33;
+      border-radius: 8px;
+      padding: 7px 10px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
 
     .hero {
-      min-height: 88vh;
+      min-height: 820px;
+      background: var(--ink);
+      color: #fff;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid #dedbd4;
+      padding: 140px 0 90px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-content {
-      max-width: 850px;
-      padding: 80px 0;
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border: 1px solid #d7bd8b1c;
+      border-radius: 50%;
+      right: -330px;
+      top: -180px;
     }
 
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 70px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .kicker,
     .eyebrow {
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 13px;
-      margin-bottom: 25px;
-      opacity: 0.65;
+      letter-spacing: 2.6px;
+      font-weight: 800;
+      color: var(--gold2);
+      margin-bottom: 18px;
     }
 
-    h1 {
-      font-size: clamp(52px, 8vw, 94px);
-      line-height: 0.95;
-      font-weight: 700;
-      margin-bottom: 30px;
-      letter-spacing: -3px;
-    }
-
-    .hero-title {
-      font-size: clamp(20px, 3vw, 30px);
-      margin-bottom: 25px;
-      font-weight: 500;
-    }
-
-    .hero-text {
-      max-width: 720px;
-      font-size: 19px;
-      opacity: 0.78;
-      margin-bottom: 38px;
-    }
-
-    .buttons {
+    .kicker {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 12px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border: 1px solid #222;
-      font-size: 14px;
-      transition: 0.25s;
+    .kicker:before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: var(--gold);
     }
 
-    .btn-dark {
-      background: #1d1d1d;
-      color: white;
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    h1 {
+      font-size: clamp(55px, 8vw, 100px);
+      line-height: .92;
+      letter-spacing: -4px;
+      font-weight: 600;
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      color: #dce4ee;
+      max-width: 720px;
+      margin-top: 27px;
+    }
+
+    .hero-sub strong {
+      color: #fff;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: #9eacbd;
+      max-width: 650px;
+      margin-top: 16px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 49px;
+      padding: 0 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      opacity: 0.8;
     }
 
-    /* GENERAL SECTIONS */
+    .gold {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .outline {
+      border: 1px solid #ffffff2b;
+      color: #fff;
+    }
+
+    .hero-photo {
+      width: min(100%, 420px);
+      margin-left: auto;
+      position: relative;
+      padding: 10px;
+    }
+
+    .hero-photo:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(215, 189, 139, .25);
+      border-radius: 50%;
+      transform: scale(1.045);
+    }
+
+    .hero-photo-frame {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--gold2);
+      background: #101c2b;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .34);
+      position: relative;
+    }
+
+    .hero-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .hero-photo-caption {
+      position: absolute;
+      left: 50%;
+      bottom: -4px;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      padding: 10px 15px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      background: rgba(7, 17, 31, .88);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 52px;
+      padding-top: 22px;
+      border-top: 1px solid #ffffff17;
+      color: #93a1b4;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+    }
+
+    .hero-stats b {
+      display: block;
+      color: #e6ebf2;
+      font-size: 12px;
+      text-transform: none;
+      letter-spacing: 0;
+      margin-top: 3px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
 
     section {
       padding: 100px 0;
-      border-bottom: 1px solid #dedbd4;
     }
 
-    .section-grid {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 70px;
-    }
-
-    .section-number {
-      font-size: 14px;
-      opacity: 0.5;
+    .eyebrow {
+      color: #8a6936;
     }
 
     h2 {
-      font-size: clamp(36px, 5vw, 58px);
-      margin-bottom: 40px;
-      letter-spacing: -2px;
-      line-height: 1;
+      font-size: clamp(35px, 4.5vw, 55px);
+      line-height: 1.1;
+      letter-spacing: -1.4px;
     }
 
-    .profile-text {
-      max-width: 800px;
-      font-size: 19px;
+    .lead {
+      color: var(--slate);
+      font-size: 15px;
+      max-width: 650px;
+      margin-top: 17px;
     }
 
-    .profile-text p + p {
-      margin-top: 18px;
-    }
-
-    /* EXPERTISE */
-
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: #d8d5ce;
-      border: 1px solid #d8d5ce;
-    }
-
-    .expertise-item {
-      background: #f8f7f4;
-      padding: 30px;
-      font-size: 19px;
-      font-weight: 600;
-      min-height: 110px;
+    .top {
       display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    /* =========================
+       PROFILE
+    ========================== */
+
+    .profile {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 90px;
       align-items: center;
     }
 
-    /* EXPERIENCE */
-
-    .experience-item {
-      padding: 30px 0;
-      border-top: 1px solid #d8d5ce;
+    .profile-photo {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #e7e5df;
+      box-shadow: 0 20px 55px rgba(7, 17, 31, .08);
+      margin-top: 30px;
     }
 
-    .experience-item:first-of-type {
-      border-top: 0;
-      padding-top: 0;
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
     }
 
-    .experience-role {
-      font-size: 22px;
-      font-weight: 700;
+    .copy {
+      font-size: 17px;
+      line-height: 1.9;
+      color: #2a394d;
     }
 
-    .experience-org {
-      font-size: 15px;
-      margin: 4px 0 12px;
-      opacity: 0.6;
+    .copy p + p {
+      margin-top: 18px;
     }
 
-    .experience-item p {
-      max-width: 760px;
+    .quote {
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
+      margin-top: 27px;
+      font: 500 22px/1.45 "Playfair Display", Georgia, serif;
+      color: #1c2b3e;
     }
 
-    /* PROJECTS */
+    /* =========================
+       EXPERTISE
+    ========================== */
 
-    .projects-grid {
+    .dark {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .dark .eyebrow {
+      color: var(--gold2);
+    }
+
+    .dark .lead {
+      color: #9eacbd;
+    }
+
+    .cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #ffffff17;
+      border-left: 1px solid #ffffff17;
     }
 
-    .project-card {
-      min-height: 230px;
-      padding: 30px;
-      border: 1px solid #d8d5ce;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: 0.25s;
+    .card {
+      padding: 29px;
+      min-height: 250px;
+      border-right: 1px solid #ffffff17;
+      border-bottom: 1px solid #ffffff17;
+      background: #ffffff03;
+      transition: .25s;
     }
 
-    .project-card:hover {
+    .card:hover {
+      background: #ffffff08;
       transform: translateY(-4px);
     }
 
-    .project-card h3 {
+    .num {
+      font-size: 10px;
+      color: var(--gold2);
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+
+    .card h3 {
       font-size: 24px;
-      margin-bottom: 15px;
+      font-weight: 500;
+      margin: 55px 0 10px;
     }
 
-    .project-card span {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      opacity: 0.5;
+    .card p {
+      font-size: 13px;
+      color: #98a6b8;
     }
 
-    /* RESEARCH */
+    /* =========================
+       EXPERIENCE
+    ========================== */
 
-    .research-focus {
-      max-width: 800px;
-      padding: 35px;
-      border: 1px solid #d8d5ce;
+    .experience {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 90px;
     }
 
-    .research-focus h3 {
-      font-size: 27px;
-      margin-bottom: 15px;
+    .timeline {
+      border-top: 1px solid var(--line);
     }
 
-    .research-intro {
-      font-size: 18px;
-      margin-bottom: 30px;
-      max-width: 800px;
-    }
-
-    /* EDUCATION */
-
-    .education-item {
+    .item {
+      display: grid;
+      grid-template-columns: 125px 1fr;
+      gap: 28px;
       padding: 25px 0;
-      border-top: 1px solid #d8d5ce;
+      border-bottom: 1px solid var(--line);
     }
 
-    .education-item:first-of-type {
-      border-top: 0;
+    .date {
+      font-size: 10px;
+      color: #8a6936;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .education-item h3 {
-      font-size: 23px;
+    .item h3 {
+      font-size: 22px;
     }
 
-    .education-item .degree {
-      font-size: 18px;
-      margin: 4px 0;
-    }
-
-    .education-item .university {
-      opacity: 0.65;
-    }
-
-    .grade {
-      display: inline-block;
-      margin-top: 10px;
+    .org {
+      font-size: 12px;
+      color: var(--slate);
       font-weight: 700;
+      margin: 3px 0 7px;
     }
 
-    /* CONTACT */
+    .item p {
+      font-size: 13px;
+      color: #5d6b7e;
+    }
+
+    /* =========================
+       VISUAL PORTFOLIO
+    ========================== */
+
+    .visual-portfolio {
+      background: #0b1624;
+      color: #fff;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 18px;
+      margin-top: 45px;
+    }
+
+    .visual-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #101c2b;
+      min-height: 360px;
+      border: 1px solid rgba(255, 255, 255, .09);
+      isolation: isolate;
+    }
+
+    .visual-card.large {
+      min-height: 560px;
+    }
+
+    .visual-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .visual-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .visual-card.governance img {
+      object-position: center 48%;
+    }
+
+    .visual-card.peace img {
+      object-position: center 42%;
+    }
+
+    .visual-card.justice img {
+      object-position: center 44%;
+    }
+
+    .visual-card.youth img {
+      object-position: center 36%;
+    }
+
+    .visual-card.research-photo img {
+      object-position: center 42%;
+    }
+
+    .visual-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, .9),
+        rgba(0, 0, 0, .22) 52%,
+        rgba(0, 0, 0, .02) 78%
+      );
+    }
+
+    .visual-content {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 25px;
+      z-index: 2;
+    }
+
+    .visual-tag {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold2);
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .visual-content h3 {
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 500;
+    }
+
+    .visual-content p {
+      font-size: 12px;
+      color: #d0d8e2;
+      margin-top: 7px;
+      max-width: 600px;
+    }
+
+    .visual-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .visual-side .visual-card {
+      min-height: 271px;
+    }
+
+    .visual-grid.second-row {
+      grid-template-columns: 1fr 1fr;
+      margin-top: 18px;
+    }
+
+    /* =========================
+       RESEARCH
+    ========================== */
+
+    .research {
+      background: #f0eee8;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 44px;
+    }
+
+    .r-card {
+      background: #fff;
+      border: 1px solid #dddcd6;
+      padding: 26px;
+      min-height: 220px;
+    }
+
+    .tag {
+      font-size: 10px;
+      color: #8a6936;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      font-weight: 800;
+    }
+
+    .r-card h3 {
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 19px 0 10px;
+    }
+
+    .r-card p {
+      font-size: 13px;
+      color: var(--slate);
+    }
+
+    /* =========================
+       EDUCATION
+    ========================== */
+
+    .edu-section {
+      background: #fff;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 42px;
+    }
+
+    .edu {
+      border: 1px solid var(--line);
+      padding: 30px;
+    }
+
+    .year {
+      font-size: 10px;
+      color: #8a6936;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .edu h3 {
+      font-size: 25px;
+      margin: 13px 0 5px;
+    }
+
+    .edu p,
+    .edu li {
+      font-size: 13px;
+      color: var(--slate);
+    }
+
+    .edu ul {
+      padding-left: 18px;
+      margin-top: 13px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
 
     .contact {
-      background: #1d1d1d;
-      color: white;
+      padding-top: 30px;
     }
 
-    .contact h2 {
-      max-width: 700px;
+    .contact-box {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 16px;
+      padding: 60px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .contact-text {
-      max-width: 680px;
-      font-size: 19px;
-      margin-bottom: 35px;
-      opacity: 0.8;
+    .contact-box:after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border: 1px solid #d7bd8b20;
+      border-radius: 50%;
+      right: -200px;
+      top: -200px;
     }
 
-    .contact .btn {
-      border-color: white;
+    .contact-box p {
+      color: #9eacbd;
+      max-width: 630px;
+      margin-top: 13px;
     }
 
-    .contact .btn-dark {
-      background: white;
-      color: #1d1d1d;
+    .contact-actions {
+      position: relative;
+      z-index: 1;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      background: #1d1d1d;
-      color: white;
-      padding: 28px 0;
-      border-top: 1px solid #444;
+      background: #050c15;
+      color: #8290a3;
+      padding: 25px 0;
+      font-size: 12px;
     }
 
-    .footer-container {
+    .footer {
       display: flex;
       justify-content: space-between;
-      font-size: 13px;
-      opacity: 0.65;
+      gap: 20px;
     }
 
-    /* MOBILE */
+    .footer a:hover {
+      color: #fff;
+    }
 
-    @media (max-width: 800px) {
+    /* =========================
+       REVEAL ANIMATION
+    ========================== */
 
-      .nav-links {
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: .7s;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1000px) {
+
+      .hero-grid,
+      .profile,
+      .experience {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        margin: 10px 0 0;
+        max-width: 420px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-side {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .top {
+        display: block;
+      }
+
+      .top .lead {
+        margin-top: 17px;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .wrap {
+        width: min(calc(100% - 30px), var(--max));
+      }
+
+      .links {
         display: none;
+        position: absolute;
+        top: 76px;
+        left: 15px;
+        right: 15px;
+        background: var(--ink);
+        padding: 10px;
+        border: 1px solid #ffffff14;
+        border-radius: 9px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .links.open {
+        display: flex;
+      }
+
+      .links a {
+        padding: 10px;
+      }
+
+      .contact-link {
+        border: 0;
+      }
+
+      .menu {
+        display: block;
       }
 
       .hero {
+        padding: 125px 0 75px;
         min-height: auto;
       }
 
-      .hero-content {
-        padding: 100px 0;
+      .hero-grid {
+        gap: 42px;
       }
 
       h1 {
-        letter-spacing: -2px;
+        letter-spacing: -2.5px;
+      }
+
+      .hero-photo {
+        width: 100%;
+        max-width: 320px;
+        margin: auto;
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 17px;
       }
 
       section {
-        padding: 70px 0;
+        padding: 72px 0;
       }
 
-      .section-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .expertise-grid,
-      .projects-grid {
+      .cards,
+      .research-grid,
+      .edu-grid {
         grid-template-columns: 1fr;
       }
 
-      .footer-container {
+      .visual-side {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-grid.second-row {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-card.large {
+        min-height: 420px;
+      }
+
+      .visual-card,
+      .visual-side .visual-card {
+        min-height: 320px;
+      }
+
+      .visual-content h3 {
+        font-size: 24px;
+      }
+
+      .item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .contact-box {
+        padding: 35px 25px;
+      }
+
+      .footer {
         flex-direction: column;
-        gap: 10px;
       }
     }
   </style>
+
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-  <nav>
-    <div class="container nav-container">
+  <header>
+    <div class="wrap nav">
 
-      <a href="#home" class="logo">
-        OMAR ALROZZI
+      <a class="logo" href="#home">
+        <span class="logo-mark">OA</span>
+        <span>Omar Alrozzi, LLM</span>
       </a>
 
-      <div class="nav-links">
-        <a href="#profile">Profile</a>
+      <button class="menu" id="menu" aria-label="Open navigation">
+        ☰
+      </button>
+
+      <nav class="links" id="links">
+        <a href="#about">Profile</a>
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
-        <a href="#work">Work</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#research">Research</a>
         <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </div>
+        <a href="#contact" class="contact-link">Contact</a>
+      </nav>
 
     </div>
-  </nav>
-
-
-  <!-- HERO -->
-
-  <header class="hero" id="home">
-
-    <div class="container hero-content">
-
-      <div class="eyebrow">
-        Law · Governance · Peacebuilding
-      </div>
-
-      <h1>
-        Omar<br>
-        Alrozzi
-      </h1>
-
-      <div class="hero-title">
-        Lawyer · Governance · Peacebuilding
-      </div>
-
-      <p class="hero-text">
-        Legal and governance professional with experience in transitional
-        justice, human rights, public policy, and peacebuilding in
-        conflict-affected contexts.
-      </p>
-
-      <div class="buttons">
-
-        <a href="#experience" class="btn btn-dark">
-          View Experience
-        </a>
-
-        <!-- Replace cv.pdf with the name of your CV file -->
-        <a href="cv.pdf" class="btn" target="_blank">
-          Download CV
-        </a>
-
-        <a href="#contact" class="btn">
-          Contact Me
-        </a>
-
-      </div>
-
-    </div>
-
   </header>
 
 
-  <!-- PROFILE -->
+  <main id="home">
 
-  <section id="profile">
+    <!-- =========================
+         HERO
+    ========================== -->
 
-    <div class="container section-grid">
+    <section class="hero">
 
-      <div class="section-number">
-        01
+      <div class="wrap hero-grid">
+
+        <div class="reveal">
+
+          <div class="kicker">
+            Law · Governance · Peacebuilding
+          </div>
+
+          <h1>
+            Omar<br>
+            Alrozzi
+          </h1>
+
+          <p class="hero-sub">
+            <strong>Lawyer</strong> · Governance & Peacebuilding Professional
+          </p>
+
+          <p class="hero-desc">
+            Legal and governance professional working across transitional
+            justice, human rights, public policy, and peacebuilding in
+            conflict-affected contexts.
+          </p>
+
+          <div class="actions">
+
+            <a class="btn gold" href="#contact">
+              Get in Touch
+            </a>
+
+            <a
+              class="btn outline"
+              href="https://www.linkedin.com/in/omaralrozzi/"
+              target="_blank"
+              rel="noopener noreferrer">
+              LinkedIn
+            </a>
+
+          </div>
+
+          <div class="hero-stats">
+
+            <div>
+              Focus
+              <b>Justice & Governance</b>
+            </div>
+
+            <div>
+              Research
+              <b>Transitional Justice</b>
+            </div>
+
+            <div>
+              Practice
+              <b>Law & Peacebuilding</b>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-photo reveal">
+
+          <div class="hero-photo-frame">
+
+            <img
+              src="profile.jpg.jpeg"
+              alt="Omar Alrozzi — professional portrait"
+              width="900"
+              height="900"
+              fetchpriority="high">
+
+          </div>
+
+          <div class="hero-photo-caption">
+            Law · Rights · Peace
+          </div>
+
+        </div>
+
       </div>
 
-      <div>
+    </section>
 
-        <h2>Profile</h2>
 
-        <div class="profile-text">
+    <!-- =========================
+         PROFILE
+    ========================== -->
+
+    <section id="about">
+
+      <div class="wrap profile">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            01 — Profile
+          </div>
+
+          <h2>
+            Legal expertise with a commitment to justice and sustainable peace.
+          </h2>
+
+          <div class="profile-photo">
+
+            <img
+              src="profile.jpg.jpeg"
+              alt="Omar Alrozzi professional portrait"
+              width="900"
+              height="1125"
+              loading="lazy">
+
+          </div>
+
+        </div>
+
+
+        <div class="copy reveal">
 
           <p>
-            I am a lawyer and governance professional working across law,
-            transitional justice, human rights, public policy, and peacebuilding.
+            I am a lawyer and governance professional working across
+            law, transitional justice, human rights, public policy,
+            and peacebuilding.
           </p>
 
           <p>
@@ -495,431 +1123,783 @@
             environments.
           </p>
 
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- EXPERTISE -->
-
-  <section id="expertise">
-
-    <div class="container section-grid">
-
-      <div class="section-number">
-        02
-      </div>
-
-      <div>
-
-        <h2>Expertise</h2>
-
-        <div class="expertise-grid">
-
-          <div class="expertise-item">
-            Transitional Justice
-          </div>
-
-          <div class="expertise-item">
-            Governance & Rule of Law
-          </div>
-
-          <div class="expertise-item">
-            Peacebuilding
-          </div>
-
-          <div class="expertise-item">
-            Human Rights
-          </div>
-
-          <div class="expertise-item">
-            Legal Research & Public Policy
-          </div>
-
-          <div class="expertise-item">
-            Training & Capacity Building
+          <div class="quote">
+            “Law, when connected to people and institutions, can become a
+            meaningful instrument for sustainable change.”
           </div>
 
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- EXPERIENCE -->
+    <!-- =========================
+         EXPERTISE
+    ========================== -->
 
-  <section id="experience">
+    <section id="expertise" class="dark">
 
-    <div class="container section-grid">
+      <div class="wrap">
 
-      <div class="section-number">
-        03
-      </div>
+        <div class="top reveal">
 
-      <div>
+          <div>
 
-        <h2>Experience</h2>
+            <div class="eyebrow">
+              02 — Expertise
+            </div>
 
+            <h2>
+              Core areas of focus.
+            </h2>
 
-        <div class="experience-item">
-
-          <div class="experience-role">
-            Legal File Audit Lead
           </div>
 
-          <div class="experience-org">
-            TEDx Shabab St · Oman · 2025
-          </div>
-
-          <p>
-            Legal compliance, governance processes, stakeholder coordination,
-            and organizational file review.
+          <p class="lead">
+            A concise view of the professional themes that define my work.
           </p>
 
         </div>
 
 
-        <div class="experience-item">
+        <div class="cards">
 
-          <div class="experience-role">
-            Project Coordinator
-          </div>
+          <article class="card reveal">
 
-          <div class="experience-org">
-            MUSAWA Center · Palestine · 2022–2023
-          </div>
+            <div class="num">01</div>
 
-          <p>
-            Transitional justice initiatives, policy dialogue, project
-            coordination, and collaboration with civil society and
-            international partners.
-          </p>
+            <h3>
+              Transitional Justice
+            </h3>
 
-        </div>
+            <p>
+              Justice mechanisms, accountability, institutional reform,
+              and pathways toward sustainable justice.
+            </p>
 
-
-        <div class="experience-item">
-
-          <div class="experience-role">
-            Legal Trainer
-          </div>
-
-          <div class="experience-org">
-            Professional Training Institutions · Oman & Palestine
-          </div>
-
-          <p>
-            Legal awareness, professional development, and capacity-building
-            programmes.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+          </article>
 
 
-  <!-- SELECTED WORK -->
+          <article class="card reveal">
 
-  <section id="work">
+            <div class="num">02</div>
 
-    <div class="container section-grid">
+            <h3>
+              Governance & Rule of Law
+            </h3>
 
-      <div class="section-number">
-        04
-      </div>
+            <p>
+              Institutional responsibility, legal compliance,
+              governance reform, and the rule of law.
+            </p>
 
-      <div>
-
-        <h2>Selected Work</h2>
-
-        <div class="projects-grid">
-
-          <div class="project-card">
-
-            <div>
-
-              <h3>
-                Transitional Justice
-              </h3>
-
-              <p>
-                Projects and initiatives related to justice, accountability,
-                institutional reform, and rule of law.
-              </p>
-
-            </div>
-
-            <span>
-              Justice · Accountability · Reform
-            </span>
-
-          </div>
+          </article>
 
 
-          <div class="project-card">
+          <article class="card reveal">
 
-            <div>
+            <div class="num">03</div>
 
-              <h3>
-                Governance & Compliance
-              </h3>
+            <h3>
+              Human Rights
+            </h3>
 
-              <p>
-                Legal review, organizational governance, stakeholder
-                coordination, and compliance support.
-              </p>
+            <p>
+              Human rights education, rights-based approaches,
+              civic engagement, and legal awareness.
+            </p>
 
-            </div>
-
-            <span>
-              Governance · Legal Compliance
-            </span>
-
-          </div>
+          </article>
 
 
-          <div class="project-card">
+          <article class="card reveal">
 
-            <div>
+            <div class="num">04</div>
 
-              <h3>
-                Training & Capacity Building
-              </h3>
+            <h3>
+              Peacebuilding
+            </h3>
 
-              <p>
-                Legal and professional training for young professionals,
-                organizations, and community participants.
-              </p>
+            <p>
+              Conflict transformation, dialogue, youth leadership,
+              social cohesion, and civic participation.
+            </p>
 
-            </div>
-
-            <span>
-              Training · Capacity Building
-            </span>
-
-          </div>
-
-
-          <div class="project-card">
-
-            <div>
-
-              <h3>
-                Debate & Dialogue
-              </h3>
-
-              <p>
-                Experience in public speaking, argumentation, dialogue,
-                facilitation, and youth engagement.
-              </p>
-
-            </div>
-
-            <span>
-              Dialogue · Communication
-            </span>
-
-          </div>
+          </article>
 
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- RESEARCH -->
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
 
-  <section id="research">
+    <section id="experience">
 
-    <div class="container section-grid">
+      <div class="wrap experience">
 
-      <div class="section-number">
-        05
-      </div>
-
-      <div>
-
-        <h2>Research</h2>
-
-        <p class="research-intro">
-          My research interests focus on transitional justice, governance,
-          legal pluralism, and institutional reform in conflict-affected
-          contexts.
-        </p>
-
-        <div class="research-focus">
+        <div class="reveal">
 
           <div class="eyebrow">
-            Current Research Focus
+            03 — Selected Experience
           </div>
 
-          <h3>
-            Transitional Justice under Fragmented Sovereignty
-          </h3>
+          <h2>
+            Selected professional experience.
+          </h2>
 
-          <p>
-            Exploring how transitional justice mechanisms can operate where
-            political authority, jurisdiction, legitimacy, and institutional
-            capacity are fragmented.
+          <p class="lead">
+            A concise selection of roles most relevant to my current
+            professional profile.
           </p>
 
         </div>
 
-      </div>
 
-    </div>
+        <div class="timeline reveal">
 
-  </section>
+          <div class="item">
 
+            <div class="date">
+              2025
+            </div>
 
-  <!-- EDUCATION -->
+            <div>
 
-  <section id="education">
+              <h3>
+                Legal Audit Lead
+              </h3>
 
-    <div class="container section-grid">
+              <div class="org">
+                TEDx Shabab St · Oman
+              </div>
 
-      <div class="section-number">
-        06
-      </div>
+              <p>
+                Legal compliance, governance processes, stakeholder
+                coordination, and organizational review.
+              </p>
 
-      <div>
+            </div>
 
-        <h2>Education</h2>
-
-
-        <div class="education-item">
-
-          <h3>
-            Master of Laws (LLM)
-          </h3>
-
-          <div class="degree">
-            Administrative and Financial Law
           </div>
 
-          <div class="university">
-            Mohammed V University · Rabat, Morocco
+
+          <div class="item">
+
+            <div class="date">
+              2022–2023
+            </div>
+
+            <div>
+
+              <h3>
+                Project Coordinator
+              </h3>
+
+              <div class="org">
+                MUSAWA Center · Palestine
+              </div>
+
+              <p>
+                Transitional justice initiatives, policy dialogue,
+                project coordination, and collaboration with civil
+                society and international partners.
+              </p>
+
+            </div>
+
           </div>
 
-          <div class="grade">
-            Grade: 17/20
+
+          <div class="item">
+
+            <div class="date">
+              2020
+            </div>
+
+            <div>
+
+              <h3>
+                Human Rights Trainer
+              </h3>
+
+              <div class="org">
+                Amnesty International · Morocco
+              </div>
+
+              <p>
+                Training on human rights and international humanitarian
+                law and support for youth civic engagement.
+              </p>
+
+            </div>
+
           </div>
 
-        </div>
 
+          <div class="item">
 
-        <div class="education-item">
+            <div class="date">
+              Oman
+            </div>
 
-          <h3>
-            Bachelor of Laws (LLB)
-          </h3>
+            <div>
 
-          <div class="university">
-            University of Palestine · Gaza, Palestine
+              <h3>
+                Legal Trainer
+              </h3>
+
+              <div class="org">
+                Professional Training Institutions
+              </div>
+
+              <p>
+                Legal awareness, professional development, and
+                capacity-building programmes.
+              </p>
+
+            </div>
+
           </div>
-
-          <div class="grade">
-            Grade: 94% · Top-ranked student
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-
-  <section id="contact" class="contact">
-
-    <div class="container section-grid">
-
-      <div class="section-number">
-        07
-      </div>
-
-      <div>
-
-        <h2>
-          Let's Connect
-        </h2>
-
-        <p class="contact-text">
-          Open to research collaboration, legal and policy opportunities,
-          training, speaking engagements, and professional partnerships.
-        </p>
-
-        <div class="buttons">
-
-          <!-- Replace with your real email -->
-          <a
-            href="mailto:YOUR-EMAIL@example.com"
-            class="btn btn-dark"
-          >
-            Email Me
-          </a>
-
-          <!-- Replace with your exact LinkedIn URL if different -->
-          <a
-            href="https://www.linkedin.com/in/omaralrozzi/"
-            class="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            href="cv.pdf"
-            class="btn"
-            target="_blank"
-          >
-            Download CV
-          </a>
 
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- FOOTER -->
+    <!-- =========================
+         VISUAL PORTFOLIO
+    ========================== -->
+
+    <section id="portfolio" class="visual-portfolio">
+
+      <div class="wrap">
+
+        <div class="top reveal">
+
+          <div>
+
+            <div class="eyebrow">
+              04 — Visual Portfolio
+            </div>
+
+            <h2>
+              Law, dialogue, institutions and civic participation.
+            </h2>
+
+          </div>
+
+          <p class="lead">
+            A curated selection of professional moments supporting
+            the portfolio narrative.
+          </p>
+
+        </div>
+
+
+        <div class="visual-grid">
+
+
+          <article class="visual-card large governance reveal">
+
+            <img
+              src="law-governance.jpg.jpg"
+              alt="Professional and public speaking engagement"
+              width="1600"
+              height="1100"
+              loading="lazy">
+
+            <div class="visual-overlay"></div>
+
+            <div class="visual-content">
+
+              <div class="visual-tag">
+                01 · Leadership
+              </div>
+
+              <h3>
+                Public Speaking & Leadership
+              </h3>
+
+              <p>
+                Professional communication, leadership, and public engagement.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <div class="visual-side">
+
+
+            <article class="visual-card peace reveal">
+
+              <img
+                src="peacebuilding.jpg.jpg"
+                alt="Peacebuilding and dialogue"
+                width="1200"
+                height="850"
+                loading="lazy">
+
+              <div class="visual-overlay"></div>
+
+              <div class="visual-content">
+
+                <div class="visual-tag">
+                  02 · Peace
+                </div>
+
+                <h3>
+                  Dialogue & Peacebuilding
+                </h3>
+
+              </div>
+
+            </article>
+
+
+            <article class="visual-card justice reveal">
+
+              <img
+                src="transitional-justice.jpg.jpg"
+                alt="Conference and institutional engagement"
+                width="1200"
+                height="850"
+                loading="lazy">
+
+              <div class="visual-overlay"></div>
+
+              <div class="visual-content">
+
+                <div class="visual-tag">
+                  03 · Institutions
+                </div>
+
+                <h3>
+                  Institutional Engagement
+                </h3>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="visual-grid second-row">
+
+
+          <article class="visual-card youth reveal">
+
+            <img
+              src="youth-leadership.jpg.jpg"
+              alt="Youth leadership and civic participation"
+              width="1200"
+              height="850"
+              loading="lazy">
+
+            <div class="visual-overlay"></div>
+
+            <div class="visual-content">
+
+              <div class="visual-tag">
+                04 · Youth
+              </div>
+
+              <h3>
+                Youth Leadership & Civic Participation
+              </h3>
+
+              <p>
+                Leadership, training, participation, and civic engagement.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="visual-card research-photo reveal">
+
+            <img
+              src="research.jpg.jpeg"
+              alt="Research and academic engagement"
+              width="1200"
+              height="850"
+              loading="lazy">
+
+            <div class="visual-overlay"></div>
+
+            <div class="visual-content">
+
+              <div class="visual-tag">
+                05 · Research
+              </div>
+
+              <h3>
+                Research & Policy
+              </h3>
+
+              <p>
+                Legal research, policy analysis, and academic work.
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESEARCH
+    ========================== -->
+
+    <section id="research" class="research">
+
+      <div class="wrap">
+
+        <div class="top reveal">
+
+          <div>
+
+            <div class="eyebrow">
+              05 — Research
+            </div>
+
+            <h2>
+              Where law meets transformation.
+            </h2>
+
+          </div>
+
+          <p class="lead">
+            Research interests connecting law, justice, governance,
+            and conflict transformation.
+          </p>
+
+        </div>
+
+
+        <div class="research-grid">
+
+
+          <div class="r-card reveal">
+
+            <div class="tag">
+              01 · Current Research
+            </div>
+
+            <h3>
+              Transitional Justice under Fragmented Sovereignty
+            </h3>
+
+            <p>
+              Exploring how transitional justice can operate where
+              political authority, jurisdiction, and institutional
+              capacity are fragmented.
+            </p>
+
+          </div>
+
+
+          <div class="r-card reveal">
+
+            <div class="tag">
+              02 · Peace
+            </div>
+
+            <h3>
+              Peacebuilding & Conflict Transformation
+            </h3>
+
+            <p>
+              Dialogue, social cohesion, conflict transformation,
+              and pathways toward sustainable peace.
+            </p>
+
+          </div>
+
+
+          <div class="r-card reveal">
+
+            <div class="tag">
+              03 · Governance
+            </div>
+
+            <h3>
+              Governance & Rule of Law
+            </h3>
+
+            <p>
+              Institutional accountability, legal pluralism,
+              governance reform, and the role of law in public life.
+            </p>
+
+          </div>
+
+
+          <div class="r-card reveal">
+
+            <div class="tag">
+              04 · Justice
+            </div>
+
+            <h3>
+              Institutional Reform & Accountability
+            </h3>
+
+            <p>
+              Justice mechanisms, institutional transformation,
+              accountability, and legal reform in fragile contexts.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education" class="edu-section">
+
+      <div class="wrap">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            06 — Education
+          </div>
+
+          <h2>
+            Academic foundation.
+          </h2>
+
+        </div>
+
+
+        <div class="edu-grid">
+
+
+          <article class="edu reveal">
+
+            <div class="year">
+              2020
+            </div>
+
+            <h3>
+              Master of Laws (LLM)
+            </h3>
+
+            <p>
+              Administrative and Financial Law · Mohammed V University,
+              Morocco
+            </p>
+
+            <ul>
+
+              <li>
+                Comparative thesis on fiscal policy and economic
+                security for foreign investors in Morocco and Palestine.
+              </li>
+
+              <li>
+                Final Grade: 17/20
+              </li>
+
+            </ul>
+
+          </article>
+
+
+          <article class="edu reveal">
+
+            <div class="year">
+              2016
+            </div>
+
+            <h3>
+              Bachelor of Laws (LLB)
+            </h3>
+
+            <p>
+              University of Palestine, Palestine
+            </p>
+
+            <ul>
+
+              <li>
+                Graduated among the top students of the cohort.
+              </li>
+
+              <li>
+                Final Grade: 94%
+              </li>
+
+            </ul>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact" class="contact">
+
+      <div class="wrap">
+
+        <div class="contact-box reveal">
+
+          <div>
+
+            <div class="eyebrow" style="color:#d7bd8b">
+              07 — Contact
+            </div>
+
+            <h2>
+              Open to meaningful professional opportunities.
+            </h2>
+
+            <p>
+              For research collaboration, legal and policy opportunities,
+              training, speaking engagements, or professional partnerships.
+            </p>
+
+          </div>
+
+
+          <div class="contact-actions">
+
+            <a
+              class="btn gold"
+              href="mailto:o.alrozzi@gmail.com">
+              Email Omar
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
-    <div class="container footer-container">
+    <div class="wrap footer">
 
-      <span>
-        © 2026 Omar Alrozzi
-      </span>
+      <div>
+        © <span id="year"></span> Omar Alrozzi, LLM.
+        All rights reserved.
+      </div>
 
-      <span>
-        Law · Governance · Peacebuilding
-      </span>
+      <div>
+
+        <a
+          href="https://www.linkedin.com/in/omaralrozzi/"
+          target="_blank"
+          rel="noopener noreferrer">
+          LinkedIn
+        </a>
+
+        ·
+
+        <a href="mailto:o.alrozzi@gmail.com">
+          o.alrozzi@gmail.com
+        </a>
+
+      </div>
 
     </div>
 
   </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    const menu = document.getElementById("menu");
+    const links = document.getElementById("links");
+
+    menu.addEventListener("click", () => {
+      links.classList.toggle("open");
+    });
+
+    links.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        links.classList.remove("open");
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+      },
+      {
+        threshold: .1
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      observer.observe(el);
+    });
+
+  </script>
 
 </body>
 </html>
